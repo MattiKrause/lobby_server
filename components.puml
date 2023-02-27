@@ -1,0 +1,53 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+database "MySql" {
+  folder "This is my folder" {
+    [Folder 3]
+  }
+  frame "Foo" {
+    [Frame 4]
+  }
+}
+
+package  Nutzer {
+    [Auth]
+    [Friends]
+    [Registration]
+    [AuthVerify]
+    [NutzerManagement]
+
+    database NutzerRead
+    database NutzerWrite
+    database FriendsRead
+    database FriendsWrite
+    database NutzerUnVerified
+    database FriendInvites
+}
+
+package Lobby {
+    [StdLobby]
+
+    database StdLobbyData
+    database LobbyInvites
+
+    LobbyInvites -- LobbyEventBus
+}
+
+
+NutzerWrite --> NutzerRead
+NutzerUnVerified --> NutzerWrite
+FriendsWrite --> FriendsRead
+
+[Auth] --> NutzerRead
+[Registration] --> NutzerUnVerified
+[Registration] --> NutzerWrite
+[NutzerManagement] --> NutzerWrite
+[Friends] --> FriendsWrite
+[Friends] --> FriendInvites
+
+[StdLobby] --> FriendsRead
+[StdLobby] --> LobbyInvites
+[StdLobby] --> NutzerRead
+
+@enduml

@@ -1,0 +1,28 @@
+Nutzer muss Eindeutiges Konto haben, damit er authentifiziert und Informationen persiestiert werden können.
+Nutzerkonto muss Anzeigenamen enthalten.
+Nutzer muss sich mithilfe von einer Email und eines Passwortes anmelden können
+Nutzer muss durch Anmelden ein dezentralisiertes, zeitlich begrenztes Token erhalten, womit sich weiteren Verlauf gearbeitet werden kann.
+Nutzer muss Freunde mit einer privaten und einer teilbaren Einladungen Anfragen können.
+Nutzer muss Freunde entfernen können. 
+Nutzer muss Freunde umbennen können.
+Nutzer muss Lobbies aufmachen können.
+Nutzer muss Lobbies betreten können.
+Nutzer muss Lobbies suchen können.
+
+Lobbyverwaltung muss Anpassbar sein.
+
+Kunden müssen Tokens zu Nutzernamen auflösen können. 
+
+Standartlobby muss Namen erhalten können.
+Standartlobby muss Sichtbarkeitslevel Öffentlich haben, bei welchem alle die Lobby finden und ihr beitreten können.
+Standartlobby muss Sichtbarkeitslevel Nur Freunde haben, bei welchem nur Freude die Lobby finden und ihr beitreten können.
+Standartlobby muss Sichtbarkeitslevel Nur auf Einladung haben, bei welchem nur eingeladene Freunde oder Leute mit Einladungscode der Lobby beitreten können.
+
+Standartlobby muss Passwort geschützt werden können.
+Standartlobby muss Spielerobergrenze angeben können.
+Standartlobby muss Tags erhalten können.
+Standartlobby muss Suche basierend auf Sichtbarkeitslevel, Passwortschutz, Tags und ob Freude in der Lobby sind durchführen können.
+Standartlobby muss Lobbyhost als IP-Adresse + Port speichern.
+ 
+Kunden müssen den Füllstand ihrer Lobby entscheiden können.
+Kunden müssen Tags noch nach der Erstellung der Lobby entscheiden können.
