@@ -6,5 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [workspace]
+members = ["web_server"]
 
 [dependencies]
+async-trait = "0.1.64"
+tokio = "1.25.0"
+sqlx = { version = "0.6.2", features = ["runtime-tokio-native-tls"] }
