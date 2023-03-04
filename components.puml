@@ -23,6 +23,7 @@ package  Nutzer {
     database FriendsWrite
     database NutzerUnVerified
     database FriendInvites
+    database Tokens
 }
 
 package Lobby {
@@ -40,6 +41,8 @@ NutzerUnVerified --> NutzerWrite
 FriendsWrite --> FriendsRead
 
 [Auth] --> NutzerRead
+[Auth] --> Tokens
+[AuthVerify] --> Tokens
 [Registration] --> NutzerUnVerified
 [Registration] --> NutzerWrite
 [NutzerManagement] --> NutzerWrite
