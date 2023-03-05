@@ -6,7 +6,7 @@ pub struct UserToken(pub Uuid);
 #[derive(Debug, Eq, PartialEq, Hash, Clone)]
 pub struct UserId(pub Uuid);
 pub struct Password(String);
-pub struct UserName(String);
+pub struct UserName(pub String);
 
 pub enum RegistrationError {
     InvalidEmail(String),
@@ -30,4 +30,12 @@ pub trait AuthService {
 pub trait RegistrationService {
     async fn register_initial(&self, primary_id: String, alias: String, password: Password) -> Result<(), RegistrationError>;
     async fn finalise_registration(&self, code: String) -> Result<(), FinaliseRegistrationError>;
+}
+
+#[async_trait]
+pub trait   UserDataRepositories {
+    async fn set_name_of(&self, id: &UserId, name: &UserName);
+    async fn check_password(&self, id: &UserId, password: &Password) -> bool;
+    async fn remove_by_id(&self, id: &UserId);
+    async fn set_password(&self, id: &UserId, password: &Password);
 }

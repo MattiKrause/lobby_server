@@ -1,11 +1,8 @@
-use std::ops::Add;
-use std::time::{Duration, Instant, SystemTime};
 use async_trait::async_trait;
-use base64::Engine;
 use crate::services::{AuthService, Password, UserId, UserName, UserToken};
 
 #[async_trait]
-pub trait CredentialChecker {
+pub trait UserCredentialChecker {
     async fn verify(&self, name: UserName, password: Password) -> Option<UserId>;
 }
 
@@ -17,14 +14,9 @@ pub trait TokenContainer {
 }
 
 struct AuthServiceImpl {
-    credentials: Box<dyn CredentialChecker + Send + Sync>,
+    credentials: Box<dyn UserCredentialChecker + Send + Sync>,
     tokens: Box<dyn TokenContainer + Send + Sync>,
 }
-
-static BASE64_ENGINE: base64::engine::GeneralPurpose = base64::engine::GeneralPurpose::new(
-    &base64::alphabet::URL_SAFE,
-    base64::engine::GeneralPurposeConfig::new().with_encode_padding(false)
-);
 
 #[async_trait]
 impl AuthService for AuthServiceImpl {

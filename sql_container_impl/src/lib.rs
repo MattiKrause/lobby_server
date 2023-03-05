@@ -1,4 +1,6 @@
 pub mod sql_token_repository;
+#[cfg(feature = "postgres_user_repository")]
+pub mod postgres_user_repository;
 
 #[macro_export]
 macro_rules! sqlx_generic_fn {
